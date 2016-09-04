@@ -23,7 +23,7 @@ class Enemy(object):    # Creates a class of the enemy that will be used repeate
                 if total_damage < 0:
                     total_damage = 0
                 return total_damage
-            character.health -= find_damage(random.randint(10, 20))
+            character.health -= find_damage(random.randint(5, 10))
         if self.health <= 0:
             character.battle_won()
 
@@ -105,7 +105,7 @@ class Player(object):
         self.potions["Elixir"] = 0
 
     def battle_won(self):
-        money_earned = random.randint(3, 10)
+        money_earned = random.randint(5, 20)
         print "You beat your foe! Congratulations, you earned %i Gold" % money_earned
         character.wallet += money_earned
         character.experience += 10
